@@ -1,0 +1,10 @@
+#Gradle
+.gradle/
+build/
+!src/**/build/
+*.class
+*.war
+*.ear
+*.log
+*.iml
+.idea/
