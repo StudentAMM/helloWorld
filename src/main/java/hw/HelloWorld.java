@@ -1,12 +1,14 @@
 package hw;
 
 import hw.detached.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class HelloWorld {
     public static void main(String[] args){
-        MessageRenderer mr = MessageSupportFactory.getInstance().getRenderer();
-        MessageProvider mp = MessageSupportFactory.getInstance().getProvider();
-        mr.setMessageProvider(mp);
+        ApplicationContext ctx = new ClassPathXmlApplicationContext
+                ("spring/app-context.xml");
+        MessageRenderer mr = ctx.getBean("renderer", MessageRenderer.class);
         mr.render();
     }
 }
