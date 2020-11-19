@@ -1,14 +1,11 @@
 package hw;
 
-import hw.detached.HelloWorldMessageProvider;
-import hw.detached.MessageProvider;
-import hw.detached.MessageRenderer;
-import hw.detached.StandardOutMessageRenderer;
+import hw.detached.*;
 
 public class HelloWorld {
     public static void main(String[] args){
-        MessageRenderer mr = new StandardOutMessageRenderer();
-        MessageProvider mp = new HelloWorldMessageProvider();
+        MessageRenderer mr = MessageSupportFactory.getInstance().getRenderer();
+        MessageProvider mp = MessageSupportFactory.getInstance().getProvider();
         mr.setMessageProvider(mp);
         mr.render();
     }
