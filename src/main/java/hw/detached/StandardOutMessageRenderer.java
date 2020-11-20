@@ -19,7 +19,7 @@ public class StandardOutMessageRenderer implements MessageRenderer{
     }
 
     @Override
-    @Autowired
+    @Autowired  //внедрение зависимости через параметр
     public void setMessageProvider(MessageProvider provider) {
         this.messageProvider = provider;
     }
